@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout-Login.cshtml";
+
+}
+
+@using (Html.BeginForm()) { 
+
+<div class="row BP postion-rel">
+    <div class="form-group col-12 offset-lg-3" style="margin:0 auto">
+        <label class="main-lable" for="">Email</label>
+        <input class="main-input" type="text" name="em" placeholder="School Name" v-model="loginData.em" style="width:100%">
+    </div>
+
+    <div class="form-group col-12">
+        <label class="main-lable" for="">Password</label>
+        <input class="main-input" name="pass" type="text" v-model="loginData.pass" style="width:100%">
+    </div>
+    @*<button class="mian-button bg-primary" style="width:50%;margin:0 auto" v-on:click="login">Login</button>*@
+    <input type="submit" value="Login" class="btn btn-info" style="width:100%" />
+    
+
+</div>
+
+}

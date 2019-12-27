@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Experience";
+    Layout = "~/Views/Shared/_LayoutUserPanal.cshtml";
+}
+    <div class="row">
+        <div class="col-12">
+            <p class="main-header-form"><i class="fas fa-briefcase"></i> Experience</p>
+            <div class="container container-form">
+                <div class="row BP postion-rel" v-for="exp in expData" :key="exp.ID">
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Position</label>
+                        <input class="main-input" type="text" placeholder="Position" v-model="exp.position">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Company</label>
+                        <input class="main-input" type="text" placeholder="Company" v-model="exp.company">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date From</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="exp.date_from">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date To</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="exp.date_to">
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Summary</label>
+                        <textarea rows="10" cols="30" class="main-textarea" type="text" placeholder="Enter your resume summary, profile or objective." v-model="exp.description"></textarea>
+                    </div>
+                    <button class="mian-button bg-primary" style="width:50%;margin:0 auto" v-on:click="updateExp(exp)">Edit</button>
+                    <button class="mian-button bg-danger" style="width:50%;margin:0 auto" v-on:click=" deleteExp(exp)">Delete</button>
+                    <i class="fas fa-times-circle text-danger delete-icon"></i>
+                    <i class="fas fa-plus-circle bg-primaey new-icon"></i>
+                </div>
+
+
+                <!-- Add New -->
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Position</label>
+                        <input class="main-input" type="text" placeholder="Position" v-model="addExp.position">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Company</label>
+                        <input class="main-input" type="text" placeholder="Company" v-model="addExp.company">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date From</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="addExp.date_from">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date To</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="addExp.date_to">
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Summary</label>
+                        <textarea rows="10" cols="30" class="main-textarea" type="text" placeholder="Enter your resume summary, profile or objective." v-model="addExp.description"></textarea>
+                    </div>
+                    <button class="mian-button" v-on:click="AddNewExp">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>

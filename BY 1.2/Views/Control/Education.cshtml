@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Education";
+    Layout = "~/Views/Shared/_LayoutUserPanal.cshtml";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <p class="main-header-form"><i class="fas fa-user-graduate"></i> Education</p>
+            <div class="container container-form">
+                <div class="row BP postion-rel" v-for="edu in eduData" :key="edu.id">
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">School Name</label>
+                        <input class="main-input" type="text" placeholder="School Name" v-model="edu.school_name">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date From</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="edu.date_from">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date To</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="edu.date_to">
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Description</label>
+                        <textarea rows="10" cols="30" class="main-textarea" type="text" placeholder="Enter your Description for study." v-model="edu.description"></textarea>
+                    </div>
+                    <button class="mian-button bg-primary" style="width:50%;margin:0 auto" v-on:click="updateEdu(edu)">Edit</button>
+                    <button class="mian-button bg-danger" style="width:50%;margin:0 auto" v-on:click="deleteEdu(edu)">Delete</button>
+                    <i class="fas fa-times-circle text-danger delete-icon"></i>
+                    <i class="fas fa-plus-circle bg-primaey new-icon"></i>
+                </div>
+
+                <!--Add New -->
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">School Name</label>
+                        <input class="main-input" type="text" placeholder="School Name" v-model="addEdu.school_name">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date From</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="addEdu.date_from">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date To</label>
+                        <input type="date" class="main-input" style="width:100%" v-model="addEdu.date_to">
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Description</label>
+                        <textarea rows="10" cols="30" class="main-textarea" type="text" placeholder="Enter your Description for study." v-model="addEdu.description"></textarea>
+                    </div>
+                    <button class="mian-button" v-on:click="AddNewEdu">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>

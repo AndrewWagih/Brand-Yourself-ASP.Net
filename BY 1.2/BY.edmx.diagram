@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d64cb37126ea4bfb9fdfda998a51f246" Name="Diagram1">
+        <EntityTypeShape EntityType="BYModel.Certificate" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Course" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Education" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Experience" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Language" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Personal_info" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Skill" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Summary" Width="1.5" PointX="3" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BYModel.Userr" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <AssociationConnector Association="BYModel.FK__Certifica__user___5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="BYModel.FK__Course__user_id__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="BYModel.FK__Education__user___44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="BYModel.FK__Experienc__user___4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="BYModel.FK__Language__user_i__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="BYModel.FK__Personal___user___3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="BYModel.FK__Skill__user_id__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="BYModel.FK__Summary__user_id__3F466844" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

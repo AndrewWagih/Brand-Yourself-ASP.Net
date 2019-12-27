@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "CV";
+    Layout = "~/Views/Shared/_Layout-CV.cshtml";
+}
+    
+    <div  class="container-fluid" >
+        <div class="container cv">
+            <div class="row">
+                <div class="col-12" v-for="personal in personalInfoData" :key="personal.id">
+                    <p class="name"><span>{{personal.first_name}}</span> <span>{{personal.last_name}}</span></p>
+                    <p class="profession">{{personal.profession}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="col-12">
+                        <div class="row" >
+                            <div class="col-12 content-about-me">
+                                <div class="header-about-me">
+                                    <i class="fa fa-user-circle"> ABOUT ME</i>
+                                </div>
+                                <p class="text-about-me" v-for="summary in summaryData" :key="summary.id">
+                                    {{summary.description}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-12 content-contact">
+                                <div class="header-contact">
+                                    <i class="fas fa-address-book"> CONTACTS</i>
+                                </div>
+                                <div class="contacts" v-for="personal in personalInfoData" :key="personal.id">
+                                    <strong>Address :</strong>
+                                    <p class="contct-addres">{{personal.address}}</p>
+                                    <strong>Phone :</strong>
+                                    <p class="contct-phone">{{personal.phone}}</p>
+                                    <strong>E-Mail :</strong>
+                                    <p class="contct-email">{{personal.email}}</p>
+                                    @*<strong>Date of birth :</strong>
+                                    <p class="contct-birthdate">{{personal.date_birth}}</p>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-12 content-skills" >
+                                <div class="header-skills">
+                                    <i class="fas fa-user-cog"> SKILLS</i>
+                                </div>
+                                <div class="skills" v-for="skill in skillData" :key="skill.id">
+                                    <span>{{skill.skill_nam}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-12 content-language" v-for="lang in langData" :key="lang.id">
+                                <div class="header-language">
+                                    <i class="fas fa-globe"> LANGUAGES</i>
+                                </div>
+                                <div class="languages">
+                                    <p>{{lang.language_name}} <span>{{lang.mastery}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="col-12">
+                        <div class="row" >
+                            <div class="col-12 content-experience">
+                                <div class="header-experience">
+                                    <i class="fa fa-briefcase"> EXPERIENCE</i>
+                                </div>
+                                <div class="row experiences" v-for="exp in expData" :key="exp.id">
+                                    <div class="col-4 p0">
+                                        <p class="compay-name">{{exp.company}}</p>
+                                        @*<p class="date"><span>{{exp.date_from}}</span> / <span>{{exp.date_to}}</span></p>*@
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="position">position</p>
+                                        <p class="description" style="padding :0">{{exp.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 content-education">
+                                <div class="header-education">
+                                    <i class="fa fa-user-graduate"> EDUCATION</i>
+                                </div>
+                                <div class="row educations" v-for="edu in eduData" :key="edu.id">
+                                    <div class="col-4 p0">
+                                        <p class="school-name">{{edu.school_name}}</p>
+                                        @*<p class="date"><span>{{edu.date_from}}</span> / <span>{{edu.date_to}}</span></p>*@
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="departmet">{{edu.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 content-course">
+                                <div class="header-course">
+                                    <i class="far fa-lightbulb"> COURSE</i>
+                                </div>
+                                <div class="row courses" v-for="course in courseData" :key="course.id"> 
+                                    <div class="col-4 p0">
+                                        @*<p class="date"><span>{{course.date_from}}</span> / <span>{{course.date_to}}</span></p>*@
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="course-name">{{course.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 content-certificate">
+                                <div class="header-certificate">
+                                    <i class="fas fa-certificate"> CERTIFICATE</i>
+                                </div>
+                                <div class="row certificate" v-for="cert in certData" :key="cert.id">
+                                    <div class="col-4 p0">
+                                        @*<p class="date"><span>{{cert.date}}</span></p>*@
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="title">{{cert.title}}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

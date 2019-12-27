@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/Shared/_LayoutUserPanal.cshtml";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <p class="main-header-form"><i class="far fa-lightbulb"></i> Courses  </p>
+            <div class="container container-form">
+                <div class="row BP postion-rel" v-for="course in courseData" :key="course.id">
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Name</label>
+                        <input class="main-input" type="text" placeholder="Name" v-model="course.name">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date From</label>
+                        <input type="date" class="main-input" style="width:100% "  v-model="course.date_from">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="main-lable" for="">Date To</label>
+                        <input type="date" class="main-input" style="width:100%"   v-model="course.date_to">
+                    </div>
+                    <button class="mian-button bg-primary" style="width:50%;margin:0 auto" v-on:click="updateCourse(course)">Edit</button>
+                    <button class="mian-button bg-danger" style="width:50%;margin:0 auto" v-on:click="deleteCourse(course)">Delete</button>
+                    <i class="fas fa-times-circle text-danger delete-icon"></i>
+                    <i class="fas fa-plus-circle bg-primaey new-icon"></i>
+
+                </div>
+                <!--Add New-->
+                <div class="row BP postion-rel">
+
+                    <div class="row">
+                        <div class="form-group col-12">
+                            <label class="main-lable" for="">Name</label>
+                            <input class="main-input" type="text" placeholder="Name" v-model="addCourse.name">
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="main-lable" for="">Date From</label>
+                            <input type="date" class="main-input" style="width:100%" v-model="addCourse.date_from">
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="main-lable" for="">Date To</label>
+                            <input type="date" class="main-input" style="width:100%" v-model="addCourse.date_to">
+                        </div>
+                        <button class="mian-button" v-on:click="AddNewCourse">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

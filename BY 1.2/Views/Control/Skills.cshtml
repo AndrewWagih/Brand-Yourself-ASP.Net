@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Skills";
+    Layout = "~/Views/Shared/_LayoutUserPanal.cshtml";
+}
+d
+    <div class="row">
+        <div class="col-12">
+            <p class="main-header-form"><i class="fas fa-puzzle-piece"></i> Skills</p>
+            <div class="container container-form">
+                <div class="row BP postion-rel" v-for="skill in skillData" :key="skill.id">
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Skill</label>
+                        <input class="main-input" type="text" placeholder="Skill" v-model="skill.skill_nam">
+                    </div>
+                    <button class="mian-button bg-primary" style="width:50%;margin:0 auto" v-on:click="updateSkill(skill)">Edit</button>
+                    <button class="mian-button bg-danger" style="width:50%;margin:0 auto" v-on:click="deleteSkill(skill)">Delete</button>
+                    <i class="fas fa-times-circle text-danger delete-icon"></i>
+                    <i class="fas fa-plus-circle bg-primaey new-icon"></i>
+                </div>
+                <!--Add New -->
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Skill</label>
+                        <input class="main-input" type="text" placeholder="Skill" v-model="addSkill.skill_nam">
+                    </div>
+                    <button class="mian-button" v-on:click="AddNewSkill">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+

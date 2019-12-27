@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "HomePage";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="@Url.Content("~/css/manage.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/home.css")">
+    <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <body class="body-home-page">
+        <video autoplay muted loop id="myVideo">
+            <source src="../video/bg-1366x768.mp4" type="video/mp4">
+        </video>
+        <div id="app" class="container-fluid" style="padding:0;
+        position:relative">
+            <div class="content-homepage">
+                <div class="uper-content">
+                    <div class="row" style="padding:0;margin:0">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <span class="logo-nav"><span class="b">B</span><span class="y">Y</span></span>
+                        </div>
+                        <ul class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="manage/PersonalInfo">Manage Template</a> </li>
+                            @{
+                                if (Request.Cookies != null)
+                                {
+                                    <li><a href="/Login/LogOut">LogOut</a></li>
+
+                                }
+                                else
+                                {
+                                    <li><a href="/Login/Loginn">LogIn</a> </li>
+                                    <li><a href="/Login/signUp">Sign Up</a></li>
+
+                                }
+                            }
+                            <li><a href="/Login/Loginn">LogIn</a> </li>
+                            <li><a href="/Login/signUp">Sign Up</a></li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-9 start-conent">
+                        <div class="text-dis">
+                            <h2>
+                                Welcom In
+                            </h2>
+                            <p>
+                                <span class="logo"><span class="b">B</span><span class="y">Y</span></span>
+                                Brand Yourself
+                            </p>
+                            <p style="padding-left: 120px;">
+                                to build your professional CV.
+                            </p>
+                            <p class="discr">
+                                Use professional field-tested resume templates that follow the exact ‘resume rules’ employers look for. Easy to use & done within minutes - try now for free!.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row lower-content">
+                    <div class="col-12 steps">
+                        <div class="row">
+                            <p class="col-12 header-steps"><span>Build your job-winning resume in three simple steps</span></p>
+                            <div class="col-4">
+                                <p class="step">Choose one of our professionally designed resumes</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="step"> Fill in your details using our simple prompts</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="step">Download & start applying for jobs today!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 fet">
+                        <div class="row">
+                            <p class="col-12 header-fet"><span>Build your job-winning resume in three simple steps</span></p>
+                            <div class="col-3">
+                                <img src="../images/save_time-c6cd5b1f0695e3b512e8b495ea66b55bbdf02f0481d088d4c137c7b98ea57199.svg" alt="">
+                                <p>Quick & easy</p>
+                                <p class="fet">Save time with our easy 3-step resume builder. No more writer’s block or formatting difficulties in Word. Rapidly build a resume employers love</p>
+                            </div>
+                            <div class="col-3">
+                                <img src="../images/grab_attention-aadd5fddd940e90c69ceb41f5a1b320b221da1f88594308093a64091407a5ec3.svg" alt="">
+                                <p>Demand attention</p>
+                                <p class="fet">Stand out from the herd of job applicants with one of our 6 professionally-designed resume templates. Get noticed; get hired.</p>
+                            </div>
+                            <div class="col-3">
+                                <img src="../images/get_results-054efc23bfc02ad1cdd8e09cff58a481d649061562da9d011be5efdabcee9b59.svg" alt="">
+                                <p>Stay organized</p>
+                                <p class="fet">Keep job hunting simple with all your resumes managed in one place.</p>
+                            </div>
+                            <div class="col-3">
+                                <img src="../images/manage_resumes-753451426c82342ad8686a90230adf49428af61661058ce2cbe258b8ca24f2dc.svg" alt="">
+                                <p>Job-winning content</p>
+                                <p class="fet">We give you expert resume writing tips from start to finish. No more worrying about missing jobs or wasting time with the wrong resume content.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</body>
+</html>
+

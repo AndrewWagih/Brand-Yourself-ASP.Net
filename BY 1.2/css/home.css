@@ -1,0 +1,270 @@
+@font-face {
+  font-family: mainFont;
+  src: url(../fonts/Florsn02.ttf);
+}
+@font-face {
+  font-family: By;
+  src: url(../fonts/BunnyRabbits.ttf);
+}
+
+.logo{
+  font-family: BY;
+    color: #252525;
+    letter-spacing: 0;
+    font-size: 71px;
+    font-weight: bolder;
+    border: 13px solid white;
+    padding: 20px;
+    border-bottom-left-radius: 110px;
+    border-top-left-radius: 110px;
+    position: relative;
+    top: -7px;
+    left: -10px;
+    padding: 0px 90px 15px 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+.logo::after{
+  content: 'Brand Yourself';
+    position: absolute;
+    font-family: mainFont;
+    font-size: 12px;
+    line-height: 12px;
+    bottom: -9px;
+    left: 18px;
+}
+.logo .b{
+  color: #27293c;
+    position: absolute;
+    left: 15px;
+}
+.logo .y{
+  color: #48b382;
+  position: absolute;
+  right: 7px;
+  bottom: 10px;
+  -webkit-transform: rotate(14deg);
+  transform: rotate(14deg);
+}
+.body-home-page{
+  padding: 0px;
+  /* background-image: url("http://localhost:8000/images/getty_505535405_281281.jpg"); */
+  background-position: top;
+  background-size: cover;
+  /* height: 635px; */
+  background-attachment: fixed;
+  font-family: mainFont
+}
+
+.vue-typer {
+  font-family: mainFont;
+}
+.vue-typer .custom.char.typed {
+  color: white;
+  font-size:20px
+}
+.vue-typer .custom.char.selected {
+  color: #E91E63;
+}
+
+.vue-typer .custom.caret {
+  animation: rocking 1s ease-in-out 0s infinite;
+}
+.vue-typer .custom.caret.typing {
+  background-color: #009688;
+}
+.vue-typer .custom.caret.selecting {
+  display: inline-block;
+  background-color: #E91E63;
+}
+.text-dis {
+  color: white;
+  font-size:40px
+
+}
+.text-dis > p:nth-of-type(1){
+  border-radius:10px;
+  margin-left: 60px;
+  letter-spacing: 15px;
+  border: 2px solid rgba(134, 134, 0, 0.25);
+  border-bottom-left-radius: 110px;
+  border-top-left-radius: 110px;
+  display: inline-block;
+  padding: 16px 10px;
+  font-size: 70px;
+  line-height: 1;
+}
+.text-dis .discr{
+  color: white;
+  font-size:18px;
+  line-height: 2;
+  text-align: center;
+}
+
+.text-dis{
+  color: white;
+  font-size:20px
+}
+.uper-content{
+  width: 100%;
+  padding:30px 0;
+  background-color: #272727ab;
+  height: 635px;
+}
+.start-conent{
+  margin: 0px auto;
+  padding-top: 100px
+}
+
+.text-dis > p{
+  font-size: 45px;
+  font-weight: bolder;
+  color: white;
+  line-height: 1;
+  text-align: center;
+
+}
+ul{
+  text-align: center
+}
+ul li{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 6px 18px;
+  position: relative;
+  cursor: pointer;
+}
+ul li a{
+  color:white;
+  padding: 6px;
+}
+ul li a:hover{
+  text-decoration: none;
+  color: white
+}
+ul li:hover{
+  /* content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; */
+  border-bottom: 2px solid white;
+  transform: rotate(2deg) ;
+  transition: border-bottom .5s, transform .5s;
+}
+.content-homepage{
+  width: 100%;
+  
+}
+.lower-content{
+  background-color: #27293c;
+  padding: 85px 30px;
+  text-align: center;
+  color: white;
+  margin: 0
+}
+
+.lower-content .header-steps,.lower-content .header-fet{
+  font-size: 25px;
+  font-weight: bold
+}
+.lower-content .header-steps > span,.lower-content .header-fet > span{
+  display: block;
+  width: 490px;
+  margin: 15px auto;
+  border-bottom: 1px solid dimgrey;
+  padding-bottom: 17px;
+}
+.lower-content .step,.lower-content .fet{
+  font-size: 16px;
+  margin: 20px 0;
+  
+}
+.steps{
+  position: relative;
+}
+.steps::after{
+  content: '';
+    border-bottom: 1px solid dimgrey;
+    width: 70%;
+    bottom: 0;
+    left: 15%;
+    position: absolute;
+}
+.fet img{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 16px;
+}
+.logo-nav{
+  /* font-family: BY;
+color: #252525;
+letter-spacing: 0;
+font-size: 71px;
+border: 13px solid white;
+border-bottom-left-radius: 110px;
+border-top-left-radius: 110px;
+position: relative;
+top: -20px;
+left: -9px;
+padding: 0px 90px 15px 0;
+background-color: white;
+    cursor: pointer; */
+font-family: BY;
+color: #252525;
+letter-spacing: 0;
+font-size: 55px;
+position: relative;
+/* top: -30px; */
+top:0;
+left: 8px;
+cursor: pointer;
+width: 105px;
+}
+.logo-nav::after{
+/* content: 'Brand Yourself';
+position: absolute;
+font-family: mainFont;
+font-size: 12px;
+line-height: 12px;
+bottom: -9px;
+left: 18px; */
+content: 'Brand Yourself';
+position: absolute;
+font-family: mainFont;
+font-size: 12px;
+line-height: 17px;
+left: 3px;
+top: 66px;
+color: white;
+}
+.logo-nav .b{
+  /* color: #27293c;
+position: absolute;
+left: 15px;
+font-weight: bolder; */
+color: #f3f3f7;
+position: absolute;
+font-weight: bolder;
+left: 6px;
+top: 0;
+}
+.logo-nav .y{
+/* color: #48b382;
+position: absolute;
+right: 9px;
+font-weight: bolder;
+bottom: -28px;
+-webkit-transform: rotate(14deg);
+transform: rotate(14deg); */
+
+color: #ffffff;
+position: absolute;
+top: 18px;
+left: 35px;
+font-weight: bolder;
+-webkit-transform: rotate(14deg);
+transform: rotate(14deg);
+}

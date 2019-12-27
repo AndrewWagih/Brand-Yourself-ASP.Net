@@ -1,0 +1,84 @@
+﻿
+@{
+ 
+    ViewBag.Title = "PersonalInfo";
+    Layout = "~/Views/Shared/_LayoutUserPanal.cshtml";
+}
+
+<div class="row" id="PersoalInfo">
+    <div class="col-12">
+        <p class="main-header-form"><i class="fab fa-github-alt"></i> Personal Info</p>
+        <div class="container container-form">
+            <div class="row BP" v-show="personalInfoData.length == 0">
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">First Name</label>
+                    <input class="main-input" type="text" placeholder="First Name" v-model="newP.first_name">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Last Name</label>
+                    <input class="main-input" type="text" placeholder="Last Name" v-model="newP.last_name">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">E-mail</label>
+                    <input class="main-input" type="text" placeholder="Profession" v-model="newP.email">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Professione</label>
+                    <input class="main-input" type="text" placeholder="Profession" v-model="newP.profession">
+                </div>
+                <div class="form-group col-12">
+                    <label class="main-lable" for="">Address</label>
+                    <input class="main-input" type="text" placeholder="Address" v-model="newP.address">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Phone</label>
+                    <input class="main-input" type="text" placeholder="Phone" v-model="newP.phone_number">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Date of birth</label>
+                    <input type="date" style="width:100%" class="main-input" v-model="newP.birthday">
+                </div>
+                <button class="mian-button"  v-on:click="AddNewPersonalInfo">Add</button>
+                
+            </div>
+
+
+            <!-- Edit Section-->
+            <div class="row postion-rel" v-for="personal in personalInfoData" :key="personal.Id" v-show="personalInfoData.length > 0">
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">First Name</label>
+                    <input class="main-input" type="text" placeholder="First Name" v-model="personal.first_name">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Last Name</label>
+                    <input class="main-input" type="text" placeholder="Last Name" v-model="personal.last_name">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">E-mail</label>
+                    <input class="main-input" type="text" placeholder="E-mail" v-model="personal.email">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Professione</label>
+                    <input class="main-input" type="text" placeholder="Profession" v-model="personal.profession">
+                </div>
+                <div class="form-group col-12">
+                    <label class="main-lable" for="">Address</label>
+                    <input class="main-input" type="text" placeholder="Address" v-model="personal.address">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Phone</label>
+                    <input class="main-input" type="text" placeholder="Phone" v-model="personal.phone_number">
+                </div>
+                <div class="form-group col-6">
+                    <label class="main-lable" for="">Date of birth</label>
+                    <input type="date" style="width:100%" class="main-input" v-model="personal.birthday">
+                </div>
+                <button class="mian-button bg-primary" style="width:50%;margin:0 auto" v-on:click="updatePersonal(personal)">Edit</button>
+                <button class="mian-button bg-danger" style="width:50%;margin:0 auto" v-on:click="deletePersonal(personal)">Delete</button>
+                <i class="fas fa-times-circle text-danger" style="position: absolute;top: -32px;right: 23px;font-size: 30px;cursor: pointer;"></i>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,121 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    @{
+        if (Request.Cookies == null)
+        {
+            Response.Redirect("/Login/Loginn");
+        }
+    }
+    <link rel="stylesheet" href="@Url.Content("~/css/manage.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/home.css")">
+    <style scoped>
+        a, a {
+            color: #a5a5a5;
+            text-decoration: none
+        }
+
+            a:hover, a:hover {
+                color: #a5a5a5;
+                text-decoration: none
+            }
+    </style>
+</head>
+<body style="padding-top:0px;">
+    
+    <div class="row" id="app">
+        <div class="col-3 side-bar" style="position: fixed;height:100%">
+            <div class="col-12">
+                <p class="main-header">
+                    Manage
+                </p>
+                @*<div class="user-info">
+                        <div class="content-user-info" v-on:click="toggle">
+                            <i class="fas fa-user-circle profile-img"></i>
+                            <span class="user-name">{{firstName}} {{lastName}}</span>
+                        </div>
+
+                    </div>*@
+                <div class="feild">
+                    <span style="width:100%;padding: 7px" class="badge badge-secondary">FILL IN YOUR DOCUMENT</span>
+                    <a href="PersonalInfo"><p class="feild-list" v-on:click="setActive('PersonalInfo')" :class="{ feildListActivePersonalInfo:PersonalInfo }"><i class="fab fa-github-alt"></i> Personal Info </p></a>
+                    <a href="Summary"><p class="feild-list" v-on:click="setActive('Summary')" :class="{ feildListActiveSummary:Summary }"><i class="far fa-compass"></i> Summary</p></a>
+                    <a href="Experience"><p class="feild-list" v-on:click="setActive('Experience')" :class="{ feildListActiveExperience:Experience }"><i class="fas fa-briefcase"></i> Experience</p>  </a>
+                    <a href="Education"><p class="feild-list" v-on:click="setActive('Education')" :class="{ feildListActiveEducation:Education }"><i class="fas fa-user-graduate"></i> Education</p>  </a>
+                    <a href="Skills"><p class="feild-list" v-on:click="setActive('Skills')" :class="{ feildListActiveSkills:Skills }"><i class="fas fa-puzzle-piece"></i> Skills</p>  </a>
+                    <a href="Language"><p class="feild-list" v-on:click="setActive('Language')" :class="{ feildListActiveLanguage:Language }"><i class="fas fa-language"></i> Language</p>  </a>
+                    <a href="Certificates"><p class="feild-list" v-on:click="setActive('Certificates')" :class="{ feildListActiveCertificates:Certificates }"><i class="fas fa-award"></i> Certificates</p>  </a>
+                    <a href="Courses"><p class="feild-list" v-on:click="setActive('Courses')" :class="{ feildListActiveCourses:Courses }"><i class="far fa-lightbulb"></i> Courses</p>  </a>
+                    <a v-on:click="showCV"><p class="feild-list"><i class="fas fa-book"></i> CV online Link</p>  </a>
+                    <!-- <a href="/Softwares"><p class="feild-list" v-on:click="setActive('Software')" :class="{ feildListActiveSoftware:Software }"><i class="fas fa-laptop"></i> Software</p></a> -->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9 offset-3">
+            <div class="container-fluid">
+
+                <div class="row" style="padding: 0px;margin: 0px;margin-bottom: 14px;">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <span class="logo-nav"><span class="b" style="color:#27293D">B</span><span class="y" style="color:#40B47F">Y</span></span>
+                    </div>
+                    <ul class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <li><a href="/home" style="color:#27293D">Home</a></li>
+                        <li><a to="/templates" style="color:#27293D">Manage Template</a> </li>
+                        @{
+                            var c = new HttpCookie("user");
+                            if (c == null)
+                            {
+                                <li><a href="/login" style="color:#27293D">Log In</a> </li>
+                                <li><a href="/signup" style="color:#27293D">Sign Up</a></li>
+
+                            }
+                            if (c != null)
+                            {
+                                <li style="color:#27293D"><a style="color:#27293D" href="/Login/LogOut">LogOut</a></li>
+
+                            }
+                        }
+                        @{
+                            if (Request.Cookies != null)
+                            {
+                                <li style="color:#27293D"><a style="color:#27293D" href="/Login/LogOut">LogOut</a></li>
+
+                            }
+                        }
+
+                    </ul>
+                </div>
+
+                <!-- Contetns Forms -->
+                @RenderBody()
+                <!-- End Contetns Forms -->
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../../Scripts/control-panal.js"></script>
+    
+
+</body>
+</html>

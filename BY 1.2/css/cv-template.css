@@ -1,0 +1,110 @@
+@font-face {
+    font-family: mainFont;
+    src: url(Florsn02.ttf);
+  }
+  @font-face {
+    font-family: fontBold;
+    src: url(Geometos.ttf);
+  }
+.p0{
+    padding: 0
+}
+.cv-body{
+    background-color: #d4d4d4;
+    font-family: inherit;
+    font-family:mainFont;
+    font-size: 12pt
+    
+}
+.cv{
+    background-color: #f6f6f6;
+    margin: 60px auto;
+    padding: 50px;
+    box-shadow: 0px 77px 200px -50px #333333;
+}
+.cv-dark{
+    background-color: black;
+    margin: 60px auto;
+    padding: 50px;
+    box-shadow: 0px 77px 200px -50px #f6f6f6;
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 990px;
+    }
+}
+
+.name{
+    font-size: 45px;
+    font-weight: bolder;
+    letter-spacing: 5px;
+}
+.profession{
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #d4d4d4;
+    border-top: 2px solid #d4d4d4;
+    padding: 10px 0
+}
+.content-about-me .header-about-me,
+.content-contact .header-contact,
+.content-skills .header-skills,
+.content-experience .header-experience,
+.content-education .header-education,
+.content-language .header-language,
+.content-course .header-course,
+.content-publication .header-publication,
+.content-certificate .header-certificate,
+.content-conference .header-conference,
+.content-interest .header-interest
+{
+    padding: 10px 0;
+    border-bottom: 2px solid #d4d4d4;
+    font-size: 16pt;
+    color: #424242;
+    font-weight: 600
+    
+}
+.content-about-me .text-about-me , .content-experience .description, .content-education .description{
+    color: #7b7b7b;
+    padding: 20px 0px;
+}
+.contacts{
+    font-weight: bolder;
+    /* font-size: 14px; */
+    padding: 20px 0
+}
+.contacts strong{
+    font-family: fontBold;
+    font-size: 11pt;
+}
+.contacts .contct-addres,.contacts .contct-email,.contacts .contct-phone,.contacts .contct-birthdate{
+    color: #424242;
+}
+.skills,.experiences,.languages,.courses,.educations,.publications,.conferences,.certificates,.interests{
+    /* padding: 30px 20px */
+    padding: 18px 20px 0
+}
+.skills > span ,.languages > p ,.courses > p{
+    font-weight: bolder;
+    font-size: 15px;
+    color: #424242;
+}
+.skills > span{
+    display: block;
+    padding: 5px
+}
+.languages > p > span{
+    margin-left: 60px;
+}
+.content-experience .compay-name,.content-experience .date,.content-experience .position,
+.content-education .school-name,.content-education .date,.content-education .departmet,
+.courses .date,.courses .course-name,.publications .date ,.publications .title,
+.date ,.title,
+.conferences .date ,.conferences .name,
+.interests .interest {
+    font-weight: bolder;
+    font-size: 15px;
+    color: #5a5a5a;
+}

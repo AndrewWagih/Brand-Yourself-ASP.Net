@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Summary";
+    Layout = "~/Views/Shared/_LayoutUserPanal.cshtml";
+}
+    <div class="row">
+        <div class="col-12">
+            <p class="main-header-form"><i class="far fa-compass"></i> Summary</p>
+            <div class="container container-form">
+                <div class="row BP " v-show="summaryData.length == 0">
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Summary</label>
+                        <textarea rows="10" cols="30" class="main-textarea" type="text" placeholder="Enter your resume summary, profile or objective." v-model="addSummary.description"></textarea>
+                    </div>
+                    <button class="mian-button" v-on:click="AddNewSummary">Add</button>
+                </div>
+                <!--Edite-->
+                <div class="row postion-rel" v-for="summary in summaryData" :key="summary.id" v-show="summaryData.length > 0">
+                    <div class="form-group col-12">
+                        <label class="main-lable" for="">Summary</label>
+                        <textarea rows="10" cols="30" class="main-textarea" type="text" placeholder="Enter your resume summary, profile or objective." v-model="summary.description"></textarea>
+                    </div>
+                    <button class="mian-button bg-primary" style="width:50%;margin:0 auto" v-on:click="updateSummary(summary)">Edit</button>
+                    <button class="mian-button bg-danger" style="width:50%;margin:0 auto" v-on:click="deleteSummary(summary)">Delete</button>
+                    <i class="fas fa-times-circle text-danger delete-icon"></i>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>

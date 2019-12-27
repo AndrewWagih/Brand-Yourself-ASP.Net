@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Certificate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="50" />
+    <Property Name="date_from" Type="date" />
+    <Property Name="date_to" Type="date" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="date_from" Type="date" />
+    <Property Name="date_to" Type="date" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="school_name" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="text" />
+    <Property Name="date_from" Type="date" />
+    <Property Name="date_to" Type="date" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Experience">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="30" />
+    <Property Name="company" Type="varchar" MaxLength="30" />
+    <Property Name="date_from" Type="date" />
+    <Property Name="date_to" Type="date" />
+    <Property Name="description" Type="text" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="language_name" Type="varchar" MaxLength="15" />
+    <Property Name="mastery" Type="varchar" MaxLength="15" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Personal_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="phone_number" Type="varchar" MaxLength="20" />
+    <Property Name="birthday" Type="varchar" MaxLength="15" />
+    <Property Name="profession" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="text" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="skill_nam" Type="varchar" MaxLength="30" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Summary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Userr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="phone_number" Type="varchar" MaxLength="20" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="birthday" Type="varchar" MaxLength="15" />
+    <Property Name="gender" Type="varchar" MaxLength="15" />
+    <Property Name="block" Type="bit" />
+  </EntityType>
+  <Association Name="FK__Certifica__user___5070F446">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Certificate">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Course__user_id__4D94879B">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Education__user___44FF419A">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Experienc__user___4222D4EF">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Experience" Type="Self.Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Language__user_i__534D60F1">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Language" Type="Self.Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Language">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Personal___user___3C69FB99">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Personal_info" Type="Self.Personal_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personal_info">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Skill__user_id__47DBAE45">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Skill">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Summary__user_id__3F466844">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Summary" Type="Self.Summary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Summary">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BYModelStoreContainer">
+    <EntitySet Name="Certificate" EntityType="Self.Certificate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personal_info" EntityType="Self.Personal_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Summary" EntityType="Self.Summary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Userr" EntityType="Self.Userr" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Certifica__user___5070F446" Association="Self.FK__Certifica__user___5070F446">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Certificate" EntitySet="Certificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Course__user_id__4D94879B" Association="Self.FK__Course__user_id__4D94879B">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Education__user___44FF419A" Association="Self.FK__Education__user___44FF419A">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Education" EntitySet="Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Experienc__user___4222D4EF" Association="Self.FK__Experienc__user___4222D4EF">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Language__user_i__534D60F1" Association="Self.FK__Language__user_i__534D60F1">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Language" EntitySet="Language" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Personal___user___3C69FB99" Association="Self.FK__Personal___user___3C69FB99">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Personal_info" EntitySet="Personal_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Skill__user_id__47DBAE45" Association="Self.FK__Skill__user_id__47DBAE45">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Skill" EntitySet="Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Summary__user_id__3F466844" Association="Self.FK__Summary__user_id__3F466844">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Summary" EntitySet="Summary" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
